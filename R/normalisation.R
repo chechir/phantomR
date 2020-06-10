@@ -8,25 +8,19 @@
 #'@export
 #'
 norm_by_sample <- function(df, mf_cols, type='MedianNorm'){
-  # df = process_data
-  # mf_cols = mf_ids_complete
   result = cbind(as.data.frame(df))
-  type='median_norm'
-  # median_val = median(as.matrix(dt[, col]))
   for (id_sample in result[, "id"]){
     ixs = which(result[, "id"] == id_sample)
     row = as.numeric(result[ixs, mf_cols])
-
-    if(type=='median_norm'){
+    if(type=='MedianNorm'){
       result[ixs, mf_cols] = row / median(row, na.rm = TRUE)
-    if(type=='std_norm'){
+    } else if(type=='std_norm'){
       result[ixs, mf_cols] = row / sd(row, na.rm = TRUE)
     } else {
       stop(str_interp('Scaling method ${type} not implemented'))
     }
   }
   result
-  }
 }
 
 
@@ -41,10 +35,6 @@ norm_by_sample <- function(df, mf_cols, type='MedianNorm'){
 #'@export
 #'
 get_factor_at_time_to_divide_by <- function(df, time_col, feature_cols){
-  # DF could be a QCs or features df
-  # df = data.frame(feats)
-  # time_col = "seq_from_filename"
-  # feature_cols = mf_ids
   ratio_to_global_median = cbind(df)
   for (mf in feature_cols){
     ratio_to_global_median[, mf] = ratio_to_global_median[, mf] / median(as.matrix(ratio_to_global_median[, mf]))
