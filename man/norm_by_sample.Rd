@@ -15,7 +15,7 @@ norm_by_sample(df, mf_cols, type = "MedianNorm")
 Normalise data assuming that samples are in rows, and molecular features in columns
 }
 \author{
-Stefano and Matias \email{matias.thayer@owlstone..co.uk}
+BDA Team \email{matias.thayer@owlstone..co.uk}
 BDA Team
 License: GNU GPL (>= 2)
 }
