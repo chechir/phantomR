@@ -2,6 +2,7 @@
 #'@description Normalise data assuming that samples are in rows, and molecular features in columns
 #'@param df Input data frame
 #'@param mf_cols Input name of molecular features columns
+#'@param type Type of normalisation to perform
 #'@author BDA Team \email{matias.thayer@owlstone..co.uk}
 #'BDA Team
 #'License: GNU GPL (>= 2)

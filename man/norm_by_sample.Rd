@@ -10,6 +10,8 @@ norm_by_sample(df, mf_cols, type = "MedianNorm")
 \item{df}{Input data frame}
 
 \item{mf_cols}{Input name of molecular features columns}
+
+\item{type}{Type of normalisation to perform}
 }
 \description{
 Normalise data assuming that samples are in rows, and molecular features in columns
